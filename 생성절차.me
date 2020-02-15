@@ -1,0 +1,81 @@
+## 1. APP 생성
+```
+python manage.py startapp Name_of_App
+```
+
+## 2. setting.py에 App 추가
+```
+INSTALLED_APPS = [
+    'list1',
+    'list2',
+    ...
+    'Name_of_App.apps.Name_of_AppConfig',
+]
+```
+
+## 3. 홈 화면 구성을 위한 html 생성
+
+> Directory_of_Apps/templates/Directory_of_Apps
+> html생성
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog test</title>
+</head>
+<body>
+Let's create our website
+</body>
+</html>
+```
+
+## 4. views로 화면에 띄울 html연결
+
+```
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'index.html')
+```
+
+## 5. url path지정 (2가지 방식)
+
+> 1. 최상위에서 처리하기
+
+상위 url
+```
+from django.contrib import admin
+from django.urls import path,include
+import Name_of_App.views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',Name_of_App.views.Name_of_class, name = 'Name_of_class'),
+]
+```
+
+> 2. 아래에서 처리하기
+
+상위 url
+```
+from django.contrib import admin
+from django.urls import path,include
+import Name_of_App.views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',include('Name_of_App.urls')),
+]
+```
+
+하위 url
+```
+from django.urls import path
+from . import views
+
+urlpatterns = [
+path('', views.Name_of_class, name='Name_of_class'),
+]
+```
