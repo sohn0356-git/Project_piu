@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='piu_mobile_test'
