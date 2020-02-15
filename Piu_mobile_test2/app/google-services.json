@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "474893653936",
+    "firebase_url": "https://piumobiletest.firebaseio.com",
+    "project_id": "piumobiletest",
+    "storage_bucket": "piumobiletest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474893653936:android:7435bf92078cf05143a875",
+        "android_client_info": {
+          "package_name": "com.mp.piu_mobile_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474893653936-ugjnvcpdei4s4ia70h98rebsv9211a5d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mp.piu_mobile_test",
+            "certificate_hash": "b98a84b70e1421d3202ac54b19740889f77fa21e"
+          }
+        },
+        {
+          "client_id": "474893653936-uh7qb4902fbnr22td184994u7ph9a0vv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk1k1Be8nVEDRK0pBYmr3WW1oGHRe-reg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474893653936-uh7qb4902fbnr22td184994u7ph9a0vv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
