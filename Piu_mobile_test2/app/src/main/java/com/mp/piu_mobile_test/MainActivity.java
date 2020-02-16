@@ -26,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
 
+    private RecyclerView recyclerView_s;
+    private RecyclerView.Adapter adapter_s;
+    private RecyclerView.LayoutManager layoutManager_s;
+    private ArrayList<Sheet> arrayList_s;
+    private FirebaseDatabase database_s;
+    private DatabaseReference databaseReference_s;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +63,32 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("MainActivity", String.valueOf(databaseError.toException()));
             }
         });
+
+        arrayList_s = new ArrayList<Sheet>();
+        databaseReference_s = database.getReference("Sheet");     //DB 테이블 연결
+        databaseReference_s.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //firebase database의 data를 GET
+                arrayList_s.clear();
+                for(DataSnapshot snapshot:dataSnapshot.getChildren()) {
+                    Sheet sheet = snapshot.getValue(Sheet.class);
+                    arrayList_s.add(sheet);
+                }
+                adapter_s.notifyDataSetChanged();                         //리스트 저장 및 새로고침
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                //error 발생시
+                Log.e("MainActivity", String.valueOf(databaseError.toException()));
+            }
+        });
+
+
         adapter = new CustomAdapter(arrayList,this);
-        recyclerView.setAdapter(adapter);
+        adapter_s = new SongAdapter(arrayList_s,this);
+        recyclerView.setAdapter(adapter_s);
 
     }
 }
