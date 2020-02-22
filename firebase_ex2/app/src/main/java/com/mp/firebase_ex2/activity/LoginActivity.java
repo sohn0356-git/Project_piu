@@ -2,7 +2,6 @@ package com.mp.firebase_ex2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,8 +31,8 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         et_email = (EditText)findViewById(R.id.et_email);
         et_pw = (EditText)findViewById(R.id.et_pw);
-        bt_login = (Button)findViewById(R.id.bt_login);
-        bt_getpw = (Button)findViewById(R.id.bt_getpw);
+        bt_login = (Button)findViewById(R.id.bt_upload);
+        bt_getpw = (Button)findViewById(R.id.bt_check);
 
         bt_login.setOnClickListener(onClickListener);
         bt_getpw.setOnClickListener(onClickListener);
@@ -44,10 +43,10 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             switch (view.getId()){
-                case R.id.bt_login:
+                case R.id.bt_upload:
                     login();
                     break;
-                case R.id.bt_getpw:
+                case R.id.bt_check:
                     myStartActivity(PasswordResetActivity.class);
                     break;
             }

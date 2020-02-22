@@ -2,7 +2,6 @@ package com.mp.firebase_ex2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
         et_pw = (EditText) findViewById(R.id.et_pw);
         et_pw2 = (EditText) findViewById(R.id.et_pw2);
         bt_signup = (Button) findViewById(R.id.bt_singup);
-        bt_login = (Button) findViewById(R.id.bt_login);
+        bt_login = (Button) findViewById(R.id.bt_upload);
         bt_signup.setOnClickListener(onClickListener);
         bt_login.setOnClickListener(onClickListener);
 
@@ -49,7 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
                 case R.id.bt_singup:
                     signUp();
                     break;
-                case R.id.bt_login:
+                case R.id.bt_upload:
                     myStartActivity(LoginActivity.class);
                     break;
             }
