@@ -1,4 +1,5 @@
 소트의 종류를 적으세요!
+
 1. selection Sort
 2. merge sort
 3. bubble sort
@@ -8,3 +9,12 @@
 7. 보고 정렬
 8. std::sort
 9. std::stable_sort
+=======
+1. 머지소트
+2. 힙소트
+3. 버블소트
+4. 삽입정렬
+5. 선택정렬
+6. 퀵 정렬
+7. 보고 정렬
+
