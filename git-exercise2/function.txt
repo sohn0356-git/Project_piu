@@ -1,1 +1,10 @@
 소트의 종류를 적으세요!
+1. selection Sort
+2. merge sort
+3. bubble sort
+4. heap sort
+5. insertion sort
+6. cocktail-shake sort
+7. 보고 정렬
+8. std::sort
+9. std::stable_sort
